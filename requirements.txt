@@ -1,0 +1,6 @@
+robin_stocks
+python-dotenv
+discord.py
+black
+money
+babel
