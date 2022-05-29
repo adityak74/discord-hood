@@ -4,3 +4,5 @@ discord.py
 black
 money
 babel
+pytest
+flake8

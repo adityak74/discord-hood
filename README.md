@@ -20,4 +20,9 @@ DISCORD_STOCK_CHANNEL_ID=copy channel id by right click channel and copy id
 
 #### Run the app
 
-```python discord_client.py```
+```make run````
+
+
+#### Test the app
+
+```make test````
