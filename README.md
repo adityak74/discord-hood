@@ -20,9 +20,9 @@ DISCORD_STOCK_CHANNEL_ID=copy channel id by right click channel and copy id
 
 #### Run the app
 
-```make run````
+```make run```
 
 
 #### Test the app
 
-```make test````
+```make test```
