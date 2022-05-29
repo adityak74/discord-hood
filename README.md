@@ -20,7 +20,7 @@ DISCORD_STOCK_CHANNEL_ID=copy channel id by right click channel and copy id
 3. Open this Link in New Tab and Select the Server and add the bot.
 
 
-#### Run the app
+#### Run the bot
 
 ```make run```
 
