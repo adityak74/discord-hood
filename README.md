@@ -1,5 +1,7 @@
 # Slack-hood
 
+[![Make Release](https://github.com/adityak74/slack-hood/actions/workflows/bump-version-release.yml/badge.svg)](https://github.com/adityak74/slack-hood/actions/workflows/bump-version-release.yml)
+
 ### Slack bot to monitor your Robinhood portfolio
 
 #### Environment Variables
