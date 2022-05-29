@@ -12,12 +12,12 @@ jobs:
         uses: actions/checkout@v3
         with:
           ref: refs/heads/main
-      - name: 'Automated Version Bump'
-        uses: 'phips28/gh-action-bump-version@master'
+      - name: Bump version and push tag
+        uses: jaumann/github-bumpversion-action@v0.0.7
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.ACTION_GITHUB_TOKEN }}
+      - name: Push changes
+        uses: ad-m/github-push-action@master
         with:
-          minor-wording: 'feat,minor'
-          patch-wording: 'patch,fixes,chore'
-          # defaulting to a patch bump.
-          rc-wording: 'RELEASE,alpha'
+          github_token: ${{ secrets.ACTION_GITHUB_TOKEN }}
+          tags: true
