@@ -6,3 +6,4 @@ money
 babel
 pytest
 flake8
+bump2version
