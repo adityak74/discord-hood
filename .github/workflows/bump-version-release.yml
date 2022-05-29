@@ -2,7 +2,7 @@ name: Make Release
 on:
   pull_request:
     types: [closed]
-    branches: [master]
+    branches: [main]
 jobs:
   bumpversion_release:
     if: github.event.pull_request.merged
