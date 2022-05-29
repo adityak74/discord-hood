@@ -35,11 +35,6 @@ def total_portfolio(stock_data):
 class MyClient(discord.Client):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-
-        # an attribute we can access from our task
-        self.counter = 0
-
-        # start the task to run in the background
         self.my_background_task.start()
 
     async def on_ready(self):
