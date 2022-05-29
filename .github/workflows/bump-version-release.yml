@@ -1,0 +1,23 @@
+name: Make Release
+on:
+  pull_request:
+    types: [closed]
+    branches: [master]
+jobs:
+  bumpversion_release:
+    if: github.event.pull_request.merged
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+        with:
+          ref: refs/heads/master
+      - name: 'Automated Version Bump'
+        uses: 'phips28/gh-action-bump-version@master'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          minor-wording: 'feat,minor'
+          patch-wording: 'patch,fixes,chore'
+          # defaulting to a patch bump.
+          rc-wording: 'RELEASE,alpha'
