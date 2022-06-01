@@ -43,7 +43,7 @@ class MyClient(discord.Client):
         print(self.user.id)
         print("------")
 
-    @tasks.loop(seconds=60)  # task runs every 60 seconds
+    @tasks.loop(seconds=14400)  # task runs every 4 hours
     async def my_background_task(self):
         try:
             channel = self.get_channel(
