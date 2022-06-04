@@ -50,13 +50,24 @@ class MyClient(discord.Client):
                 int(os.environ.get("DISCORD_STOCK_CHANNEL_ID"))
             )  # channel ID goes here
             robinhood_client = RobinhoodClient()
-            stocks_data = robinhood_client.get_stock_data()
-            stock_message = ["--=--=--=--=--=--=--=--=--"]
+
+            # stocks data section
+            stocks_data = robinhood_client.get_stock_data() 
+            stock_message = ["--=--=--=-=-STOCKS-=-=--=--=--"]
             for stock, data in stocks_data.items():
                 stock_message.append(f"{stock}: {format_stock_to_message(data)}")
             stock_message.append(f"Total Portfolio: {total_portfolio(stocks_data)}")
             stock_message.append("--=--=--=--=--=--=--=--=--")
-            sent_message = await channel.send("\n".join(stock_message))
+
+            # crypto data section
+            crypto_message = ["--=--=--=-=-CRYPTO-=-=--=--=--"]
+            crypto_data = robinhood_client.get_crypto_data()
+            for coin in crypto_data:
+                coin_symbol = coin.get("currency").get("code")
+                coin_avail_quantity = coin.get("quantity")
+                crypto_message.append(f"{coin_symbol}: {coin_avail_quantity}")
+            crypto_message.append("--=--=--=--=--=--=--=--=--")
+            sent_message = await channel.send("\n".join(stock_message + crypto_message))
             print(f"Sent message with id: {sent_message.id}")
         except Exception as ex:
             raise ex
