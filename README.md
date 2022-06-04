@@ -9,6 +9,7 @@
 ```
 ROBINHOOD_USERNAME=username
 ROBINHOOD_PASSWORD=password
+MFA_TOTP_KEY=mfa totp key from authenticator app
 DISCORD_BOT_TOKEN=create a bot app and get token
 DISCORD_STOCK_CHANNEL_ID=copy channel id by right click channel and copy id
 ```
